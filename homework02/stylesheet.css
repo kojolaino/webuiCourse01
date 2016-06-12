@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.clearfix {
+    clear: both;
+}
+
+#wrapper {
+    font-family: arial,sans-serif;
+}
+
+#wrapper > header.container-search {
+    padding: 10px;
+    background: #F1F1F1;
+}
+
+#wrapper > header.container-search .logo {
+    background: url('./imgs/googlelogo.PNG') center no-repeat;
+    width: 100px;
+    height: 40px;
+    padding-right: 10px;
+}
+
+#wrapper > header.container-search .container-input {
+    vertical-align: top;
+}
+
+#wrapper > header.container-search .container-input input {
+    width: 590px;
+    height: 35px;
+    font-size: 16px;
+    
+}
+
+#wrapper > header.container-search div {
+    display: inline-block;
+}
+
+#wrapper > header.container-search .container-header-btns {
+    float: right;
+}
+
+#wrapper > header.container-search .container-input .button-magglass {
+    background: url('./imgs/googleMagnGlass.PNG') center no-repeat;
+    width: 41px;
+    height: 39px;
+    vertical-align: top;
+    margin-left: -6px;
+}
+
+#wrapper > header.container-search .container-input .button-keymic {
+    background: url('./imgs/key-mic.PNG') center no-repeat;
+    width: 43px;
+    height: 29px;
+    position: absolute;
+    left: 668px;
+    top:19px;
+}
+
+#wrapper nav.container-navigation ul {
+    list-style: none;
+}
+
+#wrapper nav.container-navigation ul li {
+    display: inline-block;
+    padding: 10px;
+    color: gray;
+    cursor: pointer;
+}
+
+#wrapper nav.container-navigation ul li:hover {
+    color: black;
+}
