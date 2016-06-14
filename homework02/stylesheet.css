@@ -17,7 +17,10 @@
 }
 
 #wrapper > header.container-search .logo {
-    background: url('./imgs/googlelogo.PNG') center no-repeat;
+    background: url('./imgs/googlelogo.PNG');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 100px 40px; 
     width: 100px;
     height: 40px;
     padding-right: 10px;
