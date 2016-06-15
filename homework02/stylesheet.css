@@ -14,15 +14,17 @@
 #wrapper > header.container-search {
     padding: 10px;
     background: #F1F1F1;
+    border-bottom: 1px solid #666;
+    border-color: #e5e5e5;
 }
 
 #wrapper > header.container-search .logo {
-    background: url('./imgs/googlelogo.PNG');
+    background: url('./imgs/navlogo.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: 100px 40px; 
-    width: 100px;
-    height: 40px;
+    background-position: -11px 10px; 
+    width: 118px;
+    height: 37px;
     padding-right: 10px;
 }
 
@@ -43,6 +45,8 @@
 
 #wrapper > header.container-search .container-header-btns {
     float: right;
+    width: 120px;
+    height: 150px;
 }
 
 #wrapper > header.container-search .container-input .button-magglass {
@@ -54,25 +58,113 @@
 }
 
 #wrapper > header.container-search .container-input .button-keymic {
-    background: url('./imgs/key-mic.PNG') center no-repeat;
-    width: 43px;
-    height: 29px;
+    background: url('./imgs/download.gif') no-repeat 13px 4px, url('./imgs/download.png') no-repeat 37px -1px;
+    background-size: 19px 12px, 24px 24px;
+    width: 68px;
+    height: 38px;
     position: absolute;
+    vertical-align: top;
     left: 668px;
     top:19px;
 }
 
 #wrapper nav.container-navigation ul {
+    margin-left: 127px;
     list-style: none;
 }
-
+#wrapper nav.container-navigation {
+    border-bottom: 1px solid;
+    border-color: #ebebeb;
+}
 #wrapper nav.container-navigation ul li {
     display: inline-block;
-    padding: 10px;
-    color: gray;
+    padding: 16px;
+    color: #666;
+    font-size: small;
     cursor: pointer;
 }
 
 #wrapper nav.container-navigation ul li:hover {
     color: black;
 }
+
+#wrapper > header.container-search .container-header-btns .dots {
+    background:url('./imgs/dots.PNG') no-repeat;
+    display:block;
+    float:left;
+    width:29px;
+    height:27px;
+    border: none;
+    margin-right: 5px;
+    margin-top: 2px;
+
+}
+
+#wrapper > header.container-search .container-header-btns .signin {
+    background-color:#4586F6;
+    display:block;
+    border-radius: 2px;
+    float:right;
+    color: white ;
+    font-weight: bold;
+    width:69px;
+    height:30px;
+    border: none;
+    margin-right: 5px;
+    cursor:
+}
+
+
+#wrapper nav.container-navigation ul .container-nav-buttons {
+    float: right;
+    margin-top:8px;
+    margin-right:-98px;
+    width:150px;
+    height:150px;
+}
+
+#wrapper nav.container-navigation ul .container-nav-buttons .humanico {
+    background:url('./imgs/man.PNG') no-repeat;
+    background-position: -2px -1px;
+    display:block;
+    float:left;
+    width:42px;
+    height:29px;
+    margin-right:-2px;
+}
+
+#wrapper nav.container-navigation ul .container-nav-buttons .world {
+    background:url('./imgs/world.PNG') no-repeat;
+    background-position: -2px -1px;
+    display:block;
+    float:left;
+    width:42px;
+    height:29px;
+}
+
+#wrapper nav.container-navigation ul .container-nav-buttons .chark {
+    background:url('./imgs/chark.PNG') no-repeat;
+    background-position: -2px -1px;
+    display:block;
+    float:right;
+    width:72px;
+    height:29px;
+    margin-top:0px;
+    margin-right:-18px;
+}
+
+#wrapper main {
+    margin-left:141px;
+}
+
+#wrapper main .container-search-results main{
+    color:#545454;
+    line-height: 1.4;
+    word-wrap: break-word;
+    font-family: arial,sans-serif;
+    font-size: small;
+    text-align: left;
+    margin-left:0px;
+    width:736px;
+}
+
