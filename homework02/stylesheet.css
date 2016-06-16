@@ -157,7 +157,7 @@
     margin-left:141px;
 }
 
-#wrapper main .container-search-results main{
+#wrapper main .container-search-results main {
     color:#545454;
     line-height: 1.4;
     word-wrap: break-word;
@@ -168,3 +168,29 @@
     width:736px;
 }
 
+#wrapper main .cointainer-totalresults > span {
+        color:#808080;
+        font-size:small;
+}
+
+#wrapper main .container-search-results header {
+    cursor: pointer;
+    line-height: 1.2;
+    text-align: left;
+}
+
+#wrapper main .container-search-results header a:link {
+    color:  #1a0dab;
+}
+
+#wrapper main .container-search-results header a:visited {
+    color:  #609;
+}
+
+#wrapper main .container-searchdetails {
+    display:block;
+    border-style:solid;
+    border:1px;
+    width:100px;
+    height:100px;
+}
