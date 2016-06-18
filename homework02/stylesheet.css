@@ -156,6 +156,14 @@
 #wrapper main {
     margin-left:141px;
 }
+#wrapper main .container-search-results {
+    width: 40%;
+    /* margin-bottom: 25px; */
+    display: inline-block;
+    border-bottom: 1px solid #EBEBEB; 
+}
+
+
 
 #wrapper main .container-search-results main {
     float:left;
@@ -166,7 +174,7 @@
     font-size: small;
     text-align: left;
     margin-left:0px;
-    width:736px;
+    width:690px;
 }
 
 #wrapper main .cointainer-totalresults > span {
@@ -199,6 +207,7 @@
     margin-top: auto;
     margin-right:400px;
     margin-bottom: auto;
+    box-shadow: 0px 0px 2px 1px #F6F6F6;
 }
 
 #wrapper main .container-details {
@@ -209,8 +218,11 @@
 
 #wrapper main .container-searchdetails .container-details .container-searchmetadata {
     position: relative;
-    top:42%;    
-    width: 228px;
+    right:-35px;
+    top:34%;    
+    width: 250px;
+    font-size: 30px;
+    font-weight: normal;
 }
 
 #wrapper main .container-searchdetails .container-details .container-metadataimg {
@@ -218,6 +230,34 @@
     width:150px;
     height:150px;
     float:right;
-    margin-top: -18px;
+    margin-top: -45px;
 }
-    
+
+#wrapper main .container-searchdetails .container-details .container-searchmetadata .button-threedots {
+    background: url('./imgs/threedots.PNG') no-repeat center;
+    width:28px;
+    height:28px;
+    float:right;
+}
+
+#wrapper main .container-searchdetails .container-details .container-searchmetadata .container-mored {
+    color: #777;
+    height: 10px;
+    font-family: arial,sans-serif;
+    font-size: 13px;
+}    
+
+#wrapper main .container-searchdetails .container-search-details {
+    display:block; 
+    position: relative;
+    top: 13px;
+    left: 20px;
+    text-align: left;
+    font-size: 13px;
+    width: 430px;
+    height:50px;
+}
+
+.search-result {
+    margin-bottom: 70px;
+}
