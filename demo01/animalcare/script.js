@@ -125,11 +125,9 @@ function attachAnimalProfileEvents(animals) {
 
         $("#btn-show-info-"+animal.id).click(function(event) {
             event.stopPropagation()
-            $("#animal-popup-info").show().html(<h1>"az sum qk v krakata"</h1>);
+            $("#animal-popup-info").show().html(generateAnimalPopupHtml(animal.id));
 
-             // Create a function which generates the html for the animal 
-             // 1. Select the shown popup
-             // 2. Append the generated html to it
+             
         });
     });  
 
