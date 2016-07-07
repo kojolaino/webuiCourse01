@@ -52,7 +52,36 @@ function registerEventHandlers() {
         attachAnimalProfileEvents(cats);
     });
 
-    // TODO: Set dog image toggle
+    // Set dog image toggle
+    $(function() {
+        $('img#dog').hover(sourceSwap, sourceSwap);
+    });
+    
+    $('img#dog').click((event) => {
+        let dogs = [{
+            src: 'buldog.jpg',
+            id: 'buldog-dog',
+            alt: 'buldog',
+            breed:'bulldog'
+        }, {
+            src: 'german-shepard.jpg',
+            id: 'germanShepard-dog',
+            alt: 'germanShepard',
+            breed:'German Shepard'
+        }, {
+            src: 'german-dog.jpg',
+            id: 'greateDane-dog',
+            alt: 'german-dog',
+            breed:'Great Dane'
+        }];
+
+        toggleState('container-dogs');
+        appendAnimalBreedsHtml(dogs, '#container-dogs div.row');
+
+         // Attach event handlers
+        attachAnimalProfileEvents(dogs);
+    });
+    
 }
 
 function appendAnimalBreedsHtml(animals, selector) {
@@ -96,7 +125,32 @@ function attachAnimalProfileEvents(animals) {
 
         $("#btn-show-info-"+animal.id).click(function(event) {
             event.stopPropagation()
-            $("#animal-popup-info").show();
+            $("#animal-popup-info").show().html(<h1>"az sum qk v krakata"</h1>);
+
+             // Create a function which generates the html for the animal 
+             // 1. Select the shown popup
+             // 2. Append the generated html to it
         });
+    });  
+
+    function generateAnimalPopupHtml(animalData) { 
+        var html = '';
+        animalData.map(function(animalData) {
+        html += `
+            <div class="col-xs-4" id="container-${animalData.id}">
+                <div class="animal-img-holder">
+                    <img id="img-${animalData.id}" src="./imgs/${animalData.src}" alt="${animalData.alt}" class="animal-img img-resposive img-thumbnail"/>
+                    <div id="animal-info-${animalData.id}" class="text-center h3 hiden">
+                        ${animalData.breed}
+                        <div>
+                            <button class="btn btn-info" id="btn-show-info-${animalData.id}">Show info</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
     });
+
+    return html;
+    }
 }
