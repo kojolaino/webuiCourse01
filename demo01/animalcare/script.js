@@ -1,5 +1,55 @@
 init();
 
+var foods = [{
+    animal: {
+        minAge: 0,
+        maxAge: 3,
+        type: "cat"
+    },
+    name: "Whiskas Young",
+    description: "Best food for consumption for young cats!"
+}, {
+    animal: {
+        minAge: 4,
+        maxAge: 10,
+        type: "cat"
+    },
+    name: "Whiskas Adult",
+    description: "Best food for consumption for middle aged cats!"
+}, {
+    animal: {
+        minAge: 0,
+        maxAge: Number.POSITIVE_INFINITY,
+        type: "cat"
+    },
+    name: "Whiskas Old",
+    description: "Best food for consumption for old cats!"
+}, {
+    animal: {
+        minAge: 0,
+        maxAge: 3,
+        type: "dog"
+    },
+    name: "Dr. Tim’s Dog Food Young",
+    description: "Best food for consumption for young dogs!"
+}, {
+    animal: {
+        minAge: 4,
+        maxAge: 10,
+        type: "dog"
+    },
+    name: "Dr. Tim’s Dog Food Adult",
+    description: "Best food for consumption for middle aged dogs!"
+}, {
+    animal: {
+        minAge: 0,
+        maxAge: Number.POSITIVE_INFINITY,
+        type: "dog"
+    },
+    name: "Dr. Tim’s Dog Food Old",
+    description: "Best food for consumption for old dogs!"
+}];
+
 function init() {
     toggleState('container-home');
     registerEventHandlers();
@@ -23,9 +73,8 @@ function registerEventHandlers() {
     }
 
     // Set cat image toggle
-    $(function () {
-        $('img#cat').hover(sourceSwap, sourceSwap);
-    });
+
+    $('img#cat').hover(sourceSwap, sourceSwap);
 
     $('img#cat').click((event) => {
         var cats = [{
@@ -34,16 +83,16 @@ function registerEventHandlers() {
             alt: 'british',
             breed: 'British Short Haired'
         }, {
-            src: 'juja.jpg',
-            id: 'juja-cat',
-            alt: 'juja',
-            breed: 'Juja'
-        }, {
-            src: 'siamska.jpg',
-            id: 'siamska-cat',
-            alt: 'siamska',
-            breed: 'Siamese'
-        }];
+                src: 'juja.jpg',
+                id: 'juja-cat',
+                alt: 'juja',
+                breed: 'Juja'
+            }, {
+                src: 'siamska.jpg',
+                id: 'siamska-cat',
+                alt: 'siamska',
+                breed: 'Siamese'
+            }];
 
         toggleState('container-cats');
         appendAnimalBreedsHtml(cats, '#container-cats div.row');
@@ -53,35 +102,33 @@ function registerEventHandlers() {
     });
 
     // Set dog image toggle
-    $(function() {
-        $('img#dog').hover(sourceSwap, sourceSwap);
-    });
-    
+    $('img#dog').hover(sourceSwap, sourceSwap);
+
     $('img#dog').click((event) => {
         let dogs = [{
             src: 'buldog.jpg',
             id: 'buldog-dog',
             alt: 'buldog',
-            breed:'bulldog'
+            breed: 'bulldog'
         }, {
-            src: 'german-shepard.jpg',
-            id: 'germanShepard-dog',
-            alt: 'germanShepard',
-            breed:'German Shepard'
-        }, {
-            src: 'german-dog.jpg',
-            id: 'greateDane-dog',
-            alt: 'german-dog',
-            breed:'Great Dane'
-        }];
+                src: 'german-shepard.jpg',
+                id: 'germanShepard-dog',
+                alt: 'germanShepard',
+                breed: 'German Shepard'
+            }, {
+                src: 'german-dog.jpg',
+                id: 'greateDane-dog',
+                alt: 'german-dog',
+                breed: 'Great Dane'
+            }];
 
         toggleState('container-dogs');
         appendAnimalBreedsHtml(dogs, '#container-dogs div.row');
 
-         // Attach event handlers
+        // Attach event handlers
         attachAnimalProfileEvents(dogs);
     });
-    
+
 }
 
 function appendAnimalBreedsHtml(animals, selector) {
@@ -91,9 +138,9 @@ function appendAnimalBreedsHtml(animals, selector) {
 function htmlAnimalGenerator(animals) {
     var html = '';
 
-    animals.map(function(animal) {
+    animals.map(function (animal) {
         html += `
-            <div class="col-xs-4" id="container-${animal.id}">
+            <div class="col-xs-12 col-sm-12 col col-md-4" id="container-${animal.id}">
                 <div class="animal-img-holder">
                     <img id="img-${animal.id}" src="./imgs/${animal.src}" alt="${animal.alt}" class="animal-img img-resposive img-thumbnail"/>
                     <div id="animal-info-${animal.id}" class="text-center h3 hiden">
@@ -111,8 +158,8 @@ function htmlAnimalGenerator(animals) {
 }
 
 function attachAnimalProfileEvents(animals) {
-    animals.map( function (animal) {
-        $("#container-" + animal.id).click(function() {
+    animals.map(function (animal) {
+        $("#container-" + animal.id).click(function () {
             var el = $(this).find('#animal-info-' + animal.id),
                 isVisible = el.is(":visible");
 
@@ -123,32 +170,56 @@ function attachAnimalProfileEvents(animals) {
             }
         });
 
-        $("#btn-show-info-"+animal.id).click(function(event) {
+        $("#btn-show-info-" + animal.id).click(function (event) {
             event.stopPropagation()
-            $("#animal-popup-info").show().html(generateAnimalPopupHtml(animal.id));
+            $("#animal-popup-info").show().html(generateAnimalPopupHtml(animal));
+        
+            $("#get-food").click(() => {
+                var foddInput = $("#food-input").val();
+                var filteredFoods = foods.filter(food => {
+                    return foddInput >= food.animal.minAge && foddInput <= food.animal.maxAge
+                });
+                $("#food-container").html();
+            });
 
-             
         });
-    });  
+    });
 
-    function generateAnimalPopupHtml(animalData) { 
-        var html = '';
-        animalData.map(function(animalData) {
-        html += `
-            <div class="col-xs-4" id="container-${animalData.id}">
-                <div class="animal-img-holder">
-                    <img id="img-${animalData.id}" src="./imgs/${animalData.src}" alt="${animalData.alt}" class="animal-img img-resposive img-thumbnail"/>
-                    <div id="animal-info-${animalData.id}" class="text-center h3 hiden">
-                        ${animalData.breed}
-                        <div>
-                            <button class="btn btn-info" id="btn-show-info-${animalData.id}">Show info</button>
-                        </div>
+    function generateAnimalPopupHtml(animal) {
+        let html = `
+            <div class="row" id="container-${animal.id}">
+                <div class="animal-img-holder col-xs-12 col-sm-12 col-md-4">
+                    <img id="img-${animal.id}" src="./imgs/${animal.src}" alt="${animal.alt}" class="animal-img img-resposive img-thumbnail"/>
+                </div>
+                <div id="animal-info-${animal.id}" class="col-xs-12 col-sm-12 col-md-8">
+                    <div class="animal-popup-info">
+                            <h3>${animal.breed}</h3>
+                            <p>blablablavblablablablablablablablablablablablablablavvvvvvblablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla</p>
                     </div>
                 </div>
             </div>
+            <div class="row form-horizontal padding-10">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4">
+                    <div class="form-group">
+                        <label for="usr" class="control-label col-sm-3">Age:</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" id="food-input">
+                        </div>
+                        <div class="col-sm-5">
+                            <button id="get-food" type="button" class="btn btn-primary">Get Food</button>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            <div class= "row food-container">
+            </div>
         `;
-    });
+        return html;
+    }
 
-    return html;
+    function generateFoods(foods) {
+        var html= '';
+        foods.map();
+
     }
 }
