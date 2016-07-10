@@ -38,3 +38,18 @@
 .padding-10 {
     padding:10px !important;
 }
+
+.food-img {
+    width: 150px;
+    height: 150px;
+}
+
+#food-container {
+    width:100%;
+    height:150px;
+   /* overflow-x:auto;*/
+}
+
+.container {
+    padding-top: 50px;
+}

@@ -1,54 +1,58 @@
 init();
 
 var foods = [{
-    animal: {
-        minAge: 0,
-        maxAge: 3,
-        type: "cat"
-    },
-    name: "Whiskas Young",
-    description: "Best food for consumption for young cats!"
-}, {
-    animal: {
-        minAge: 4,
-        maxAge: 10,
-        type: "cat"
-    },
-    name: "Whiskas Adult",
-    description: "Best food for consumption for middle aged cats!"
-}, {
-    animal: {
-        minAge: 0,
-        maxAge: Number.POSITIVE_INFINITY,
-        type: "cat"
-    },
-    name: "Whiskas Old",
-    description: "Best food for consumption for old cats!"
-}, {
-    animal: {
-        minAge: 0,
-        maxAge: 3,
-        type: "dog"
-    },
-    name: "Dr. Tim’s Dog Food Young",
-    description: "Best food for consumption for young dogs!"
-}, {
-    animal: {
-        minAge: 4,
-        maxAge: 10,
-        type: "dog"
-    },
-    name: "Dr. Tim’s Dog Food Adult",
-    description: "Best food for consumption for middle aged dogs!"
-}, {
-    animal: {
-        minAge: 0,
-        maxAge: Number.POSITIVE_INFINITY,
-        type: "dog"
-    },
-    name: "Dr. Tim’s Dog Food Old",
-    description: "Best food for consumption for old dogs!"
-}];
+        animal: {
+            minAge: 0,
+            maxAge: 3,
+            type: "cat"
+        },
+        name: "Whiskas Young",
+        description: "Best food for consumption for young cats!",
+        src: 'RC_Labretr.jpg',
+        id: 'RC_Labretr-food',
+        alt: 'RC_Labretr'
+        ,
+    }, {
+        animal: {
+            minAge: 4,
+            maxAge: 10,
+            type: "cat"
+        },
+        name: "Whiskas Adult",
+        description: "Best food for consumption for middle aged cats!"
+    }, {
+        animal: {
+            minAge: 11,
+            maxAge: Number.POSITIVE_INFINITY,
+            type: "cat"
+        },
+        name: "Whiskas Old",
+        description: "Best food for consumption for old cats!"
+    }, {
+        animal: {
+            minAge: 0,
+            maxAge: 3,
+            type: "dog"
+        },
+        name: "Dr. Tim’s Dog Food Young",
+        description: "Best food for consumption for young dogs!"
+    }, {
+        animal: {
+            minAge: 4,
+            maxAge: 10,
+            type: "dog"
+        },
+        name: "Dr. Tim’s Dog Food Adult",
+        description: "Best food for consumption for middle aged dogs!"
+    }, {
+        animal: {
+            minAge: 11,
+            maxAge: Number.POSITIVE_INFINITY,
+            type: "dog"
+        },
+        name: "Dr. Tim’s Dog Food Old",
+        description: "Best food for consumption for old dogs!"
+    }];
 
 function init() {
     toggleState('container-home');
@@ -76,23 +80,29 @@ function registerEventHandlers() {
 
     $('img#cat').hover(sourceSwap, sourceSwap);
 
-    $('img#cat').click((event) => {
+    $('img#cat, #cats-page').click((event) => {
         var cats = [{
             src: 'british-shot-hair.jpg',
             id: 'british-cat',
             alt: 'british',
-            breed: 'British Short Haired'
+            breed: 'British Short Haired',
+            type: "cat",
+            desc: "The British Shorthair is the pedigreed version of the traditional British domestic cat, with a distinctively chunky body, dense coat and broad face. The most familiar colour variant is the 'British Blue', a solid blue-gray with copper eyes, but the breed has also been developed in a wide range of other colours and patterns, including tabby and colorpoint.It is one of the most ancient cat breeds known, probably originating from European domestic cats imported into the UK by the invading Romans in the first century AD. In modern times it remains the most popular pedigreed breed in its native country, as registered by the UK's Governing Council of the Cat Fancy (GCCF).The breed's good-natured appearance and relatively calm temperament make it a frequent media star, notably as the inspiration for John Tenniel's famous illustration of the Cheshire Cat from Alice in Wonderland. In the more modern era, a blue British Shorthair is the subject of the original  image, credited with popularising the lolcat phenomenon."
         }, {
-                src: 'juja.jpg',
-                id: 'juja-cat',
-                alt: 'juja',
-                breed: 'Juja'
-            }, {
-                src: 'siamska.jpg',
-                id: 'siamska-cat',
-                alt: 'siamska',
-                breed: 'Siamese'
-            }];
+            src: 'juja.jpg',
+            id: 'juja-cat',
+            alt: 'juja',
+            breed: 'Juja',
+            type: "cat",
+            desc: "The British Shorthair is the pedigreed version of the traditional British domestic cat, with a distinctively chunky body, dense coat and broad face. The most familiar colour variant is the 'British Blue', a solid blue-gray with copper eyes, but the breed has also been developed in a wide range of other colours and patterns, including tabby and colorpoint.It is one of the most ancient cat breeds known, probably originating from European domestic cats imported into the UK by the invading Romans in the first century AD. In modern times it remains the most popular pedigreed breed in its native country, as registered by the UK's Governing Council of the Cat Fancy (GCCF).The breed's good-natured appearance and relatively calm temperament make it a frequent media star, notably as the inspiration for John Tenniel's famous illustration of the Cheshire Cat from Alice in Wonderland. In the more modern era, a blue British Shorthair is the subject of the original  image, credited with popularising the lolcat phenomenon."
+        }, {
+            src: 'siamska.jpg',
+            id: 'siamska-cat',
+            alt: 'siamska',
+            breed: 'Siamese',
+            type: "cat",
+            desc: "The British Shorthair is the pedigreed version of the traditional British domestic cat, with a distinctively chunky body, dense coat and broad face. The most familiar colour variant is the 'British Blue', a solid blue-gray with copper eyes, but the breed has also been developed in a wide range of other colours and patterns, including tabby and colorpoint.It is one of the most ancient cat breeds known, probably originating from European domestic cats imported into the UK by the invading Romans in the first century AD. In modern times it remains the most popular pedigreed breed in its native country, as registered by the UK's Governing Council of the Cat Fancy (GCCF).The breed's good-natured appearance and relatively calm temperament make it a frequent media star, notably as the inspiration for John Tenniel's famous illustration of the Cheshire Cat from Alice in Wonderland. In the more modern era, a blue British Shorthair is the subject of the original  image, credited with popularising the lolcat phenomenon."
+        }];
 
         toggleState('container-cats');
         appendAnimalBreedsHtml(cats, '#container-cats div.row');
@@ -100,27 +110,35 @@ function registerEventHandlers() {
         // Attach event handlers
         attachAnimalProfileEvents(cats);
     });
-
+    
     // Set dog image toggle
     $('img#dog').hover(sourceSwap, sourceSwap);
 
-    $('img#dog').click((event) => {
+    $('img#dog, #dogs-page').click((event) => {
         let dogs = [{
             src: 'buldog.jpg',
             id: 'buldog-dog',
             alt: 'buldog',
-            breed: 'bulldog'
+            breed: 'bulldog',
+            type: "dog",
+            desc: "The British Shorthair is the pedigreed version of the traditional British domestic cat, with a distinctively chunky body, dense coat and broad face. The most familiar colour variant is the 'British Blue', a solid blue-gray with copper eyes, but the breed has also been developed in a wide range of other colours and patterns, including tabby and colorpoint.It is one of the most ancient cat breeds known, probably originating from European domestic cats imported into the UK by the invading Romans in the first century AD. In modern times it remains the most popular pedigreed breed in its native country, as registered by the UK's Governing Council of the Cat Fancy (GCCF).The breed's good-natured appearance and relatively calm temperament make it a frequent media star, notably as the inspiration for John Tenniel's famous illustration of the Cheshire Cat from Alice in Wonderland. In the more modern era, a blue British Shorthair is the subject of the original  image, credited with popularising the lolcat phenomenon."
         }, {
-                src: 'german-shepard.jpg',
-                id: 'germanShepard-dog',
-                alt: 'germanShepard',
-                breed: 'German Shepard'
-            }, {
-                src: 'german-dog.jpg',
-                id: 'greateDane-dog',
-                alt: 'german-dog',
-                breed: 'Great Dane'
-            }];
+            src: 'german-shepard.jpg',
+            id: 'germanShepard-dog',
+            alt: 'germanShepard',
+            breed: 'German Shepard',
+            type: "dog",
+            desc: "The British Shorthair is the pedigreed version of the traditional British domestic cat, with a distinctively chunky body, dense coat and broad face. The most familiar colour variant is the 'British Blue', a solid blue-gray with copper eyes, but the breed has also been developed in a wide range of other colours and patterns, including tabby and colorpoint.It is one of the most ancient cat breeds known, probably originating from European domestic cats imported into the UK by the invading Romans in the first century AD. In modern times it remains the most popular pedigreed breed in its native country, as registered by the UK's Governing Council of the Cat Fancy (GCCF).The breed's good-natured appearance and relatively calm temperament make it a frequent media star, notably as the inspiration for John Tenniel's famous illustration of the Cheshire Cat from Alice in Wonderland. In the more modern era, a blue British Shorthair is the subject of the original  image, credited with popularising the lolcat phenomenon."
+
+        }, {
+            src: 'german-dog.jpg',
+            id: 'greateDane-dog',
+            alt: 'german-dog',
+            breed: 'Great Dane',
+            type: "dog",
+            desc: "The British Shorthair is the pedigreed version of the traditional British domestic cat, with a distinctively chunky body, dense coat and broad face. The most familiar colour variant is the 'British Blue', a solid blue-gray with copper eyes, but the breed has also been developed in a wide range of other colours and patterns, including tabby and colorpoint.It is one of the most ancient cat breeds known, probably originating from European domestic cats imported into the UK by the invading Romans in the first century AD. In modern times it remains the most popular pedigreed breed in its native country, as registered by the UK's Governing Council of the Cat Fancy (GCCF).The breed's good-natured appearance and relatively calm temperament make it a frequent media star, notably as the inspiration for John Tenniel's famous illustration of the Cheshire Cat from Alice in Wonderland. In the more modern era, a blue British Shorthair is the subject of the original  image, credited with popularising the lolcat phenomenon."
+
+        }];
 
         toggleState('container-dogs');
         appendAnimalBreedsHtml(dogs, '#container-dogs div.row');
@@ -128,6 +146,13 @@ function registerEventHandlers() {
         // Attach event handlers
         attachAnimalProfileEvents(dogs);
     });
+
+    // $(".nav.navbar-nav.navigation-animals li a").click((event)=>{
+    //     event.preventDefault();
+    //     var href = event.target.dataset.state;
+    //     toggleState('container-' + href);
+    //     var animals = animalDataset[href];
+    // })
 
 }
 
@@ -173,20 +198,26 @@ function attachAnimalProfileEvents(animals) {
         $("#btn-show-info-" + animal.id).click(function (event) {
             event.stopPropagation()
             $("#animal-popup-info").show().html(generateAnimalPopupHtml(animal));
-        
+
             $("#get-food").click(() => {
                 var foddInput = $("#food-input").val();
                 var filteredFoods = foods.filter(food => {
-                    return foddInput >= food.animal.minAge && foddInput <= food.animal.maxAge
+                    return foddInput >= food.animal.minAge && foddInput <= food.animal.maxAge && food.animal.type == animal.type
                 });
-                $("#food-container").html();
+                $("#food-container").html(generateFoods(filteredFoods));
+                //alert(JSON.stringify(filteredFoods));
             });
-
+            $("#close-button-container").click(function () {
+                $("#animal-popup-info").hide();
+            });
         });
     });
 
     function generateAnimalPopupHtml(animal) {
         let html = `
+             <div id="close-button-container" class="col-xs-2 col-xs-offset-11 btn-xs">
+                <button type="button" class="btn btn-warning">Close</button>
+            </div>
             <div class="row" id="container-${animal.id}">
                 <div class="animal-img-holder col-xs-12 col-sm-12 col-md-4">
                     <img id="img-${animal.id}" src="./imgs/${animal.src}" alt="${animal.alt}" class="animal-img img-resposive img-thumbnail"/>
@@ -194,7 +225,7 @@ function attachAnimalProfileEvents(animals) {
                 <div id="animal-info-${animal.id}" class="col-xs-12 col-sm-12 col-md-8">
                     <div class="animal-popup-info">
                             <h3>${animal.breed}</h3>
-                            <p>blablablavblablablablablablablablablablablablablablavvvvvvblablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla</p>
+                            <p>${animal.desc}</p>
                     </div>
                 </div>
             </div>
@@ -211,15 +242,36 @@ function attachAnimalProfileEvents(animals) {
                     </div>    
                 </div>
             </div>
-            <div class= "row food-container">
+            <div class="row" id="food-container">
             </div>
         `;
         return html;
     }
 
     function generateFoods(foods) {
-        var html= '';
-        foods.map();
-
+        var html = '';
+        foods.map(function (food) {
+            html +=
+                `<div id="food-info-container">
+                    <div class="food-img-holder col-xs-12 col-sm-8 col-md-2">
+                        <img id="img-${food.id}" src="./imgs/${food.src}" alt="${food.alt}" class="food-img img-resposive img-rounded"/>
+                    </div>
+                    <div id="animal-info-food" class="col-xs-12 col-sm-12 col-md-4">
+                        <div class="animal-popup-info">
+                                <h4>${food.name}</h4>
+                                <p>${food.description}</p>
+                        </div>
+                    </div>
+              </div>      
+            `;
+        });
+        return html;
     }
 }
+
+
+// 1. Init Animal Data
+// 2. Generate HTML
+// 3. append HTML to the container
+// 4. toggleState
+// container
