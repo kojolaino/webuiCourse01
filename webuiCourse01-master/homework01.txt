@@ -1,0 +1,13 @@
+!#/bin/bash
+count=0
+sum=0
+while [ $count -le 100 ]
+do
+  #list numbers from 1 to 100
+   echo "Current count: $count"
+   let count=$count+1
+  #sum the total of all number from 1 to 100
+   let sum=$sum+$count
+done
+#display the total
+echo "Total sum:$sum"
