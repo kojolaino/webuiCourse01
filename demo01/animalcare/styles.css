@@ -58,7 +58,7 @@
     padding-top: 50px;
 }
 
-#container-cats ul li {
+#container-cats ul li, #container-dogs ul li {
     width: 32%;
     min-height: 250px;
     display: inline-block;
