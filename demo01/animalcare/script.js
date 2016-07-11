@@ -129,7 +129,7 @@ function registerEventHandlers() {
         }];
 
         toggleState('container-cats');
-        appendAnimalBreedsHtml(cats, '#container-cats div.row');
+        appendAnimalBreedsHtml(cats, '#container-cats ul');
 
         // Attach event handlers
         attachAnimalProfileEvents(cats);
@@ -165,7 +165,7 @@ function registerEventHandlers() {
         }];
 
         toggleState('container-dogs');
-        appendAnimalBreedsHtml(dogs, '#container-dogs div.row');
+        appendAnimalBreedsHtml(dogs, '#container-dogs ul');
 
         // Attach event handlers
         attachAnimalProfileEvents(dogs);
@@ -189,17 +189,17 @@ function htmlAnimalGenerator(animals) {
 
     animals.map(function (animal) {
         html += `
-            <div class="col-xs-12 col-sm-12 col col-md-4 row" id="container-${animal.id}">
-                <div class="animal-img-holder row">
+            <li id="container-${animal.id}">
+                <div class="animal-img-holder">
                     <img id="img-${animal.id}" src="./imgs/${animal.src}" alt="${animal.alt}" class="animal-img img-resposive img-thumbnail"/>
-                    <div id="animal-info-${animal.id}" class="text-center h3 hiden row">
+                    <div id="animal-info-${animal.id}" class="text-center h3 hiden">
                         ${animal.breed}
-                        <div id="btn-info-container" class="row">
+                        <div id="btn-info-container">
                             <button class="btn btn-info" id="btn-show-info-${animal.id}">Show info</button>
                         </div>
                     </div>
                 </div>
-            </div>
+            </li>
         `;
     });
 
