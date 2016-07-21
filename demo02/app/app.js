@@ -1,7 +1,7 @@
-var app = angular.module("animal",['ngRoute']);
+var app = angular.module("animal",['ngRoute', 'ui.bootstrap']);
 
 app.controller('MainCtrl', ['$scope', function($scope) {
-    $scope.p = 'kak e we';
+  /**/
 }]);
 
 app.config(function($routeProvider) {
