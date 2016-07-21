@@ -1,0 +1,15 @@
+<div id="container-cats">
+    <ul>
+        <li ng-repeat="x in animal">
+            <div class="animal-img-holder">
+                <img ng-src="{{x.src}}" ng-click="showButton = !showButton" class="animal-img img-resposive img-thumbnail" />
+                <div class="text-center h3" ng-show="showButton">
+                    {{x.breed}}
+                    <div id="btn-info-container">
+                        <button class="btn btn-info">Show info</button>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

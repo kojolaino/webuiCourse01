@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animal Care</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" onclick="toggleState('container-home')">AnimalCare</a>
+                </div>
+                <ul class="nav navbar-nav navigation-animals">
+                    <li class="active"><a href="#" id="home-page" onclick="toggleState('container-home')">Home</a></li>
+                    <li><a href="#" id="dogs-page">Dogs</a></li>
+                    <li><a href="#" id="cats-page">Cats</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="animal-popup-info" class="padding-10">
+            <div class="row"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row padding-10" id="container-home">
+            <div class="row col-xs-12 col-sm-4 col-md-8 col-sm-offset-2" id="information-holder">
+                <p>Hello all new happy pet owners, this site is esepcialy created for people who just adopted a new(hopefully)
+                    memeber of the family like a little kitten or a puppy to help them keep a happy realtionship with their
+                    new pet. So why is it important to have a helthy happy pet? Pet ownership in general, and cat or dog
+                    ownership in particular can improve your quality of life. As devoted pet parents to some pretty cool
+                    fur-kids we know all too well just how much of our time can be spent trying to find the right products,
+                    services and advice to meet our pets’ needs. That’s time that could be better spent doing the things
+                    that we love together – from cuddles on the couch to running in the rain (ask any Chocolate Labrador).
+                    That’s why we created Animal Care, an Bulgarian Pet Care Company dedicated to providing you and your
+                    furry family members with Amazing Vet Care Solutions.
+                </p>
+                <h2>Are you a cat or a dog person ?<h2>
+            </div>
+            <div class="row col-xs-12 col-sm-4 col-sm-offset-2">
+                <div class="image-holder">
+                    <img src="./imgs/home-cat.png" data-alt-src="./imgs/images.jpg" id="cat" alt="cat" class="animal-img img-responsive img-thumbnail" />
+                </div>
+            </div>
+            <div class="row col-xs-12 col-sm-4">
+                <div class="image-holder">
+                    <img src="./imgs/home-dog.jpg" data-alt-src="./imgs/dog-bone.png" id="dog" alt="dog" class="animal-img img-responsive img-thumbnail">
+                </div>
+            </div>
+        </div>
+        <div id="container-cats">
+            <ul></ul>
+        </div>
+        <div id="container-dogs">
+            <ul></ul>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
