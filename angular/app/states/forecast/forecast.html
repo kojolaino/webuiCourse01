@@ -1,0 +1,5 @@
+<div>
+	<div ng-repeat="city in cities | orderBy: 'city'" ng-click= "showFunct(city)"> {{ city.city }} :
+		<span ng-show="city.state">{{ city.degrees }}<span></div>
+		<img ng-src="{{city.src}}"></img>
+	</div>
