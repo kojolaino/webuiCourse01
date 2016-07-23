@@ -97,7 +97,7 @@ app.factory('animal', function() {
                 var filteredDog = dogs.filter(function(dog) {
                     return dogid === dog.id;
                 })
-                return filteredCat[0]
+                return filteredDog[0]
             } else {
                 return dogs;
             };

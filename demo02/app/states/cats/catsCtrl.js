@@ -6,7 +6,7 @@ app.controller('CatsCtrl', ['$scope','animal', function($scope, animal) {
 app.config(function($routeProvider) {
     $routeProvider
         .when('/cats' , {
-            templateUrl: '/app/states/animal.html',
+            templateUrl: '/app/templates/animal.html',
             controller: 'CatsCtrl'
         });
 });
