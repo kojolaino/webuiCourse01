@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="./app/css/styles.css">
 </head>
 <body ng-app="animal">
-    <nav-bar></nav-bar>
-    <div ng-controller="MainCtrl">
-        <ng-view></ng-view>
+    <div class="container">
+        <nav-bar></nav-bar>
+        <div ng-controller="MainCtrl">
+            <ng-view></ng-view>
+        </div>
     </div>
     <script src="./bower_components/jquery/dist/jquery.js"></script>
     <script src="./bower_components/angular/angular.js"></script>

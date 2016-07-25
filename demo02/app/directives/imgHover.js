@@ -4,10 +4,11 @@ app.directive('imgHover', function ($location) {
         scope: {
             fpath: '@',
             spath: '@',
-            urlPath: '@'
+            urlPath: '@',
+            classtype: '@'
         },
         template: `
-        <div class="col-xs-12 col-sm-4 col-sm-offset-2">
+        <div class="classtype">
             <div class="image-holder" ng-click="goTo(urlPath)">
                 <img ng-src="{{ imgpath }}" class="animal-img img-responsive img-thumbnail animal" />
             </div>
