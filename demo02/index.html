@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="./app/css/styles.css">
 </head>
-<body ng-app="animal">
+<body ng-app="animal"><!--attaching the ng-app directive to the body of the html to define the scope of the app-->
+    <!--in the view or html the only thing static is the navigational bar which will be displayed on all pages or states-->
     <div class="container">
-        <nav-bar></nav-bar>
-        <div ng-controller="MainCtrl">
-            <ng-view></ng-view>
+        <nav-bar></nav-bar><!-- we are using a predefinded directive to genarate the navigational bar's html -->
+        <div ng-controller="MainCtrl"><!-- attaching the main controler to load always the home state-->
+            <ng-view></ng-view><!-- use ng-view directive to construct a view by injecting a template html depending on the visited url--> 
         </div>
     </div>
     <script src="./bower_components/jquery/dist/jquery.js"></script>

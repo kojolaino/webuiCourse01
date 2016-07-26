@@ -1,3 +1,4 @@
+<!--difining the popUp html template which is genarated when clicked on a given pet -->
 <div>
     <div class="modal-footer">
         <button class="btn btn-warning" type="button" ng-click="cancel()">Close</button>
@@ -16,17 +17,17 @@
     <div class="row form-horizontal padding-10">
         <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4">
             <div class="form-group">
-                <label for="usr" class="control-label col-sm-3">Age:</label>
+                <label for="usr" class="control-label col-sm-3">Age:</label><!-- adding age input-->
                 <div class="col-sm-4">
-                    <input type="number" class="form-control" id="food-input" ng-model="age">
-                </div>
-                <div class="col-sm-5">
+                    <input type="number" class="form-control" id="food-input" ng-model="age"><!-- including ng-module so we can use the value as so we are able to filter out the foods-->
+                </div><!-- adding age input-->
+                <div class="col-sm-5"><!-- adding subbmit button get food when cliked it uses a methode getFoods the return the filted foods by age on breed of a given pet-->
                     <button id="get-food" type="button" class="btn btn-primary" ng-click="getFoods(age,animal.type)">Get Food</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="row" id="food-container">
-        <food ng-repeat="food in foods" food="food"></food>
+        <food ng-repeat="food in foods" food="food"></food><!-- pre-defined directive food the is used to list the filtered foods -->
     </div>
 </div>
